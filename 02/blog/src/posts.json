@@ -1,0 +1,22 @@
+[
+    {
+        "title" :"Tutorial belajar reactjs lengkap",
+        "tags":["react", "frontend"],
+        "date" :"2024-09-27",
+        "isNew" : true
+    },
+
+    {
+        "title" :"meningkatkan performa di reactjs",
+        "tags":["react", "frontend"],
+        "date" :"2024-09-28",
+        "isNew" : false
+    },
+
+    {
+        "title" :"cara membuat component reusable di reactjs",
+        "tags":["react", "css"],
+        "date" :"2024-09-29",
+        "isNew" : false
+    }
+]
