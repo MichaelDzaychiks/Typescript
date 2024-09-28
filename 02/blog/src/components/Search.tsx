@@ -2,6 +2,7 @@ import {useState} from 'react';
 
 const Search : React.FC<any> = ({onSearchChange,totalPost}) =>{
     const [search,setSearch] = useState<string>("");
+    const [IsSearchTriggered, setIsSearchTriggered] = useState<boolean>(false);
 
     const onSearchHandler = (event:any) => {
         console.log("Search component: " + event.target.value);
@@ -10,6 +11,7 @@ const Search : React.FC<any> = ({onSearchChange,totalPost}) =>{
     };
 
     const onClickSearchBtnHandler = () =>{
+        setIsSearchTriggered(true);
         onSearchChange(search);
     };
 
@@ -23,13 +25,19 @@ const Search : React.FC<any> = ({onSearchChange,totalPost}) =>{
         <>
             <div>
                 cari artikel: <input 
-                    onChange={event => setSearch(event.target.value)}
+                    onChange={event => {
+                        setIsSearchTriggered(false);
+                        setSearch(event.target.value)
+                    }}
                     onKeyDown={onKeyDownSearchHandler}>
-                    </input>
+                </input>
+
                 <button onClick={onClickSearchBtnHandler}>cari</button>
             </div>
             
-            <small>ditemukan {totalPost} data dengan pencarian kata "{search}"</small>
+            {IsSearchTriggered && (
+                <small>ditemukan {totalPost} data dengan pencarian kata "{search}"</small>
+            )}
         </>
     )
 }
