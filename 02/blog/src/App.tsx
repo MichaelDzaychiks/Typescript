@@ -15,11 +15,13 @@ const typedPostsData: Post[] = postsData as Post[];
 
 function App(){
   const [posts, setPosts] = useState<Post[]>(typedPostsData);
+  const [totalPost,setTotalPost] = useState<number>(0);
 
   const onSearchChange = (value:string) => {
     console.log("app component: " + value);
     const filteredPosts = typedPostsData.filter(item=> item.title.includes(value));
     setPosts(filteredPosts);
+    setTotalPost(filteredPosts.length);
   }
 
   return(
