@@ -33,6 +33,7 @@ function App(){
           <Article {...post} key={index} />
         ))}
       </div>
+      
     </>
   )
 }

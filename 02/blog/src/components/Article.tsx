@@ -1,35 +1,31 @@
-interface ArticleProps{
-    title:string,
-    tags:string[],
-    date:string,
-    isNew: boolean
+import React from 'react';
+
+interface ArticleProps {
+  id: string;
+  title: string;
+  tags: string[];
+  date: string;
+  isNew: boolean;
+  imageUrl: string; // Add the image URL prop
 }
 
-const NewStatusArticle = () => {
-    return(
-        <span>--New!</span>
-    )
-}
+const Article: React.FC<ArticleProps> = ({ title, tags, date, isNew, imageUrl }) => {
+  return (
+    <article className={`article ${isNew ? 'new' : ''}`}>
+      <div className="article-image">
+        <img src={imageUrl} alt={title} />
+      </div>
+      <h2>{title}</h2>
+      <p className="date">{new Date(date).toLocaleDateString()}</p>
+      <div className="tags">
+        {tags.map(tag => (
+          <span key={tag} className="tag">
+            #{tag}
+          </span>
+        ))}
+      </div>
+    </article>
+  );
+};
 
-const Article:React.FC<ArticleProps> = ({ title, tags, date, isNew }) => {
-    const articleStyle: React.CSSProperties ={
-        textAlign:'left',
-        padding:'10px',
-        marginBottom:'20px'
-    }
-
-    return(
-        <div style={articleStyle}>
-                <h3 style={{marginBottom:0}}>{title}</h3>
-                <small>
-                    Date:{date}, tags: {tags.join(", ")} {" "}
-                    {isNew && <NewStatusArticle />}
-                </small>
-                <div>
-                    <small>ditulis oleh</small>
-                </div>
-            </div>
-    )
-}
-
-export default Article
+export default Article;

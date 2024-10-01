@@ -27,7 +27,7 @@ const Search : React.FC<any> = ({onSearchChange,totalPost}) =>{
                 cari artikel: <input 
                     onChange={event => {
                         setIsSearchTriggered(false);
-                        setSearch(event.target.value)
+                        setSearch(event.target.value);
                     }}
                     onKeyDown={onKeyDownSearchHandler}>
                 </input>

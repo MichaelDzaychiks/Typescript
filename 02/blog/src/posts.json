@@ -1,22 +1,27 @@
 [
     {
-        "title" :"Tutorial belajar reactjs lengkap",
-        "tags":["react", "frontend"],
-        "date" :"2024-09-27",
-        "isNew" : true
+      "id": "1",
+      "title": "Understanding React Hooks",
+      "tags": ["react", "hooks", "javascript"],
+      "date": "2024-04-20",
+      "isNew": true,
+      "imageUrl": "../public/images/kianachibi.jpg"
     },
-
     {
-        "title" :"meningkatkan performa di reactjs",
-        "tags":["react", "frontend"],
-        "date" :"2024-09-28",
-        "isNew" : false
+      "id": "2",
+      "title": "A Guide to TypeScript",
+      "tags": ["typescript", "javascript"],
+      "date": "2024-03-15",
+      "isNew": false,
+      "imageUrl": "../public/images/kianakaslana.jpg"
     },
-
     {
-        "title" :"cara membuat component reusable di reactjs",
-        "tags":["react", "css"],
-        "date" :"2024-09-29",
-        "isNew" : false
+      "id": "3",
+      "title": "Styling in React",
+      "tags": ["react", "css", "styling"],
+      "date": "2024-02-10",
+      "isNew": false,
+      "imageUrl": "../public/images/shiroko.jpg"
     }
-]
+  ]
+  
